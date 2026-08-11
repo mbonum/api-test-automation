@@ -1,0 +1,22 @@
+,
+
+  { "case": "1 - attiva (figlia reseller)", "country": "es", "state": "active", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "2 - sospesa", "country": "es", "state": "suspended", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "3 - scaduta (reseller)", "country": "es", "state": "expired", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "4 - in recupero", "country": "es", "state": "recovery", "phone": "641400416", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "641400416" },
+  { "case": "5 - da attivare mai pagante, con geo", "country": "es", "state": "to_activate_geo", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "6 - da attivare senza geo (just arrived)", "country": "es", "state": "to_activate_nogeo", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+
+  { "case": "1 - attiva (figlia reseller)", "country": "de", "state": "active", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "2 - sospesa", "country": "de", "state": "suspended", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "3 - scaduta (reseller)", "country": "de", "state": "expired", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "4 - in recupero", "country": "de", "state": "recovery", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "SKIP" },
+  { "case": "5 - da attivare mai pagante, con geo", "country": "de", "state": "to_activate_geo", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "6 - da attivare senza geo (just arrived)", "country": "de", "state": "to_activate_nogeo", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+
+  { "case": "1 - attiva (figlia reseller)", "country": "gb", "state": "active", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "2 - sospesa", "country": "gb", "state": "suspended", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "3 - scaduta (reseller)", "country": "gb", "state": "expired", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "4 - in recupero", "country": "gb", "state": "recovery", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "skip" },
+  { "case": "5 - da attivare mai pagante, con geo", "country": "gb", "state": "to_activate_geo", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" },
+  { "case": "6 - da attivare senza geo (just arrived)", "country": "gb", "state": "to_activate_nogeo", "profileId": "", "purchaseId": "", "cartDetailId": "", "productId": "", "type": "", "escortId": "", "jwt": "", "notes": "TODO ids" }

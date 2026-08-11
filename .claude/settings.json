@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(grep -oiE '\"\\(message|error|exception|status\\)\":[^,}]{0,120}' report-20260729-092634.html)",
+      "Bash(newman run *)",
+      "Bash(node -e \"const c=require\\('./EA Sunrise \\(hmac\\).postman_collection.json'\\); const f=c.item.find\\(i=>i.name==='V5'\\); console.log\\('V5 items:'\\); \\(f.item||[]\\).forEach\\(function walk\\(it,d\\){d=d||0; if\\(it.request\\){console.log\\(' '.repeat\\(d\\)+ \\(it.request.method||''\\) + ' ' + it.name\\)} else if\\(it.item\\){console.log\\(' '.repeat\\(d\\)+'['+it.name+']'\\); it.item.forEach\\(x=>walk\\(x,d+1\\)\\)}}\\);\")",
+      "Bash(npm root *)",
+      "Bash(npm ls *)"
+    ]
+  }
+}

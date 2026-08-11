@@ -1,0 +1,37 @@
+[
+  {
+    "case": "0 - attiva", "country": "it", "state": "active", "phone": "3457009173",
+    "profileId": "102", "purchaseId": "15739", "cartDetailId": "147262", "productId": "4", "type": "1", "escortId": "102", "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YTY4YzkyYzhmMTBmIiwiaWF0IjoxNzg1MjUyMTQwLCJuYmYiOjE3ODUyNTIxNDAsImV4cCI6MTgxNjc4ODE0MCwiaXNvIjoiV2VkLCAyOC1KdWwtMjAyNyAxNzoyMjoyMCBDRVNUIiwiZGF0YSI6eyJjb3VudHJ5IjoiaXQiLCJsYW5ndWFnZSI6Iml0In0sInNpZ25hdHVyZSI6IjRlYjA3Mzc0ZDNhY2IwYjc0MzM1MjNmMzY2MzE0YWY5Iiwicm9sZXMiOnsiZXNjb3J0IjoxMDJ9fQ.ch9U0p6ZyXBHiUjr2wbeqGwAeuKpPXtgOcgB5GHYfKk",
+    "notes": "3457009173 active has subscription. purchaseId is in the column ID, column TYPE 1, 13, 15 - column content PRODUCT_ID 4"
+  },
+  {
+    "case": "1 - attiva (reseller)", "country": "it", "state": "active", "phone": "3522064925",
+    "profileId": "148372", "purchaseId": "2248569", "cartDetailId": "null", "productId": "1", "type": "1", "escortId": "148372", "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YTY4YzkyYzhmMTBmIiwiaWF0IjoxNzg1MjUyMTQwLCJuYmYiOjE3ODUyNTIxNDAsImV4cCI6MTgxNjc4ODE0MCwiaXNvIjoiV2VkLCAyOC1KdWwtMjAyNyAxNzoyMjoyMCBDRVNUIiwiZGF0YSI6eyJjb3VudHJ5IjoiaXQiLCJsYW5ndWFnZSI6Iml0In0sInNpZ25hdHVyZSI6IjRlYjA3Mzc0ZDNhY2IwYjc0MzM1MjNmMzY2MzE0YWY5Iiwicm9sZXMiOnsiZXNjb3J0IjoxMDJ9fQ.ch9U0p6ZyXBHiUjr2wbeqGwAeuKpPXtgOcgB5GHYfKk",
+    "notes": "3522064925 subscription column type 1, 13, 15 - column content product_id 4"
+  },
+  {
+    "case": "2 - sospesa", "country": "it", "state": "suspended", "phone": "3509355610",
+    "profileId": "148075", "purchaseId": "2248072", "cartDetailId": "null", "productId": "6", "type": "1", "escortId": "148075", "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YTY4YzkyYzhmMTBmIiwiaWF0IjoxNzg1MjUyMTQwLCJuYmYiOjE3ODUyNTIxNDAsImV4cCI6MTgxNjc4ODE0MCwiaXNvIjoiV2VkLCAyOC1KdWwtMjAyNyAxNzoyMjoyMCBDRVNUIiwiZGF0YSI6eyJjb3VudHJ5IjoiaXQiLCJsYW5ndWFnZSI6Iml0In0sInNpZ25hdHVyZSI6IjRlYjA3Mzc0ZDNhY2IwYjc0MzM1MjNmMzY2MzE0YWY5Iiwicm9sZXMiOnsiZXNjb3J0IjoxMDJ9fQ.ch9U0p6ZyXBHiUjr2wbeqGwAeuKpPXtgOcgB5GHYfKk",
+    "notes": "3935067209 type 1, 13 - product_id (status 6 suspended) "
+  },
+  {
+    "case": "3 - scaduta (reseller)", "country": "it", "state": "expired", "phone": "3509355610",
+    "profileId": "147871", "purchaseId": "2238508", "cartDetailId": "2196712", "productId": "101", "type": "1", "escortId": "147871", "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YTY4YzkyYzhmMTBmIiwiaWF0IjoxNzg1MjUyMTQwLCJuYmYiOjE3ODUyNTIxNDAsImV4cCI6MTgxNjc4ODE0MCwiaXNvIjoiV2VkLCAyOC1KdWwtMjAyNyAxNzoyMjoyMCBDRVNUIiwiZGF0YSI6eyJjb3VudHJ5IjoiaXQiLCJsYW5ndWFnZSI6Iml0In0sInNpZ25hdHVyZSI6IjRlYjA3Mzc0ZDNhY2IwYjc0MzM1MjNmMzY2MzE0YWY5Iiwicm9sZXMiOnsiZXNjb3J0IjoxMDJ9fQ.ch9U0p6ZyXBHiUjr2wbeqGwAeuKpPXtgOcgB5GHYfKk",
+    "notes": "profileId 147871 from phone 3509355610 type 1, 13 - product_id (status 6 suspended) "
+  },
+  {
+    "case": "4 - in recupero", "country": "it", "state": "recovery", "phone": "3276447810",
+    "profileId": "116432", "purchaseId": "1365902", "cartDetailId": "NULL", "productId": "3", "type": "21", "escortId": "116432", "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YTY4YzkyYzhmMTBmIiwiaWF0IjoxNzg1MjUyMTQwLCJuYmYiOjE3ODUyNTIxNDAsImV4cCI6MTgxNjc4ODE0MCwiaXNvIjoiV2VkLCAyOC1KdWwtMjAyNyAxNzoyMjoyMCBDRVNUIiwiZGF0YSI6eyJjb3VudHJ5IjoiaXQiLCJsYW5ndWFnZSI6Iml0In0sInNpZ25hdHVyZSI6IjRlYjA3Mzc0ZDNhY2IwYjc0MzM1MjNmMzY2MzE0YWY5Iiwicm9sZXMiOnsiZXNjb3J0IjoxMDJ9fQ.ch9U0p6ZyXBHiUjr2wbeqGwAeuKpPXtgOcgB5GHYfKk",
+    "notes": "3276447810 - 3755479630 type 13 - status 3"
+  },
+  {
+    "case": "5 - da attivare mai pagante, con geo", "country": "it", "state": "to_activate_geo", "phone": "3533886263",
+    "profileId": "148681", "purchaseId": "1", "cartDetailId": "1", "productId": "1", "type": "1", "escortId": "148681", "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YTY4YzkyYzhmMTBmIiwiaWF0IjoxNzg1MjUyMTQwLCJuYmYiOjE3ODUyNTIxNDAsImV4cCI6MTgxNjc4ODE0MCwiaXNvIjoiV2VkLCAyOC1KdWwtMjAyNyAxNzoyMjoyMCBDRVNUIiwiZGF0YSI6eyJjb3VudHJ5IjoiaXQiLCJsYW5ndWFnZSI6Iml0In0sInNpZ25hdHVyZSI6IjRlYjA3Mzc0ZDNhY2IwYjc0MzM1MjNmMzY2MzE0YWY5Iiwicm9sZXMiOnsiZXNjb3J0IjoxMDJ9fQ.ch9U0p6ZyXBHiUjr2wbeqGwAeuKpPXtgOcgB5GHYfKk",
+    "notes": "3533886263 never paid, has geo type 1 - status 6 (a prescindere) > ko"
+  },
+  {
+    "case": "6 - da attivare senza geo (just arrived)", "country": "it", "state": "to_activate_nogeo", "phone": "3287541531",
+    "profileId": "0", "purchaseId": "1", "cartDetailId": "1", "productId": "1", "type": "1", "escortId": "1", "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2YTY4YzkyYzhmMTBmIiwiaWF0IjoxNzg1MjUyMTQwLCJuYmYiOjE3ODUyNTIxNDAsImV4cCI6MTgxNjc4ODE0MCwiaXNvIjoiV2VkLCAyOC1KdWwtMjAyNyAxNzoyMjoyMCBDRVNUIiwiZGF0YSI6eyJjb3VudHJ5IjoiaXQiLCJsYW5ndWFnZSI6Iml0In0sInNpZ25hdHVyZSI6IjRlYjA3Mzc0ZDNhY2IwYjc0MzM1MjNmMzY2MzE0YWY5Iiwicm9sZXMiOnsiZXNjb3J0IjoxMDJ9fQ.ch9U0p6ZyXBHiUjr2wbeqGwAeuKpPXtgOcgB5GHYfKk",
+    "notes": "3287541531 just arrived, no geo Indirizzo () type 1 - status 6 (a prescindere) > ko"
+  }
+]
