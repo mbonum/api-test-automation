@@ -6,14 +6,15 @@ BASE="http://st-snr.test.k8s.dontouch.group"
 T=20
 
 # profileId:purchaseId pairs from clients.json (state)
+# profileId:purchaseId:state — synced from clients.json (2026-08-21)
 CLIENTS=(
   "102:15739:active"
-  "148372:2248569:active-reseller"
-  "148075:2248072:suspended"
-  "147871:2238508:expired"
-  "116432:1365902:recovery"
+  "149552:2281512:active-reseller"
+  "148718:2248498:suspended"
+  "148372:2264891:expired"
+  "52550:2285159:recovery"
   "148681:1:to_activate_geo"
-  "0:1:to_activate_nogeo"
+  "149581:1:to_activate_nogeo"
 )
 
 hit() { # method url  -> prints "HTTP <code> | status=<..> msg=<..>"
