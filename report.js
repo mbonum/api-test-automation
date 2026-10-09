@@ -1,14 +1,25 @@
 #!/usr/bin/env node
 // Runs a collection (folder) once per data row and writes a Markdown report.
 // Usage: node report.js [collection] [data.json] [env.json] [folder]  ->  report-<collection>-<stamp>.md
-// No args = Sunrise V5. Pass "" as folder to run the whole collection.
+// No args = Sunrise V5. Known collections need only the name; extra args override PRESETS.
+// Pass "" as folder to run the whole collection.
 const { execSync } = require('child_process');
 const GLOBAL = execSync('npm root -g').toString().trim();
 const newman = require(`${GLOBAL}/newman`);
 const fs = require('fs');
 
-const [COLLECTION = 'EA Sunrise (hmac).postman_collection.json',
-       DATA = 'clients.json', ENV = 'env.json', FOLDER = 'V5'] = process.argv.slice(2);
+// collection -> [data, env, folder]
+const PRESETS = {
+  'EA Sunrise (hmac).postman_collection.json': ['clients.json', 'env.json', 'V5'],
+  'EA Api Shop (jwt).postman_collection.json': ['ea-shop-data.json', 'env-ea-shop.json', 'v2'],
+};
+const [COLLECTION = 'EA Sunrise (hmac).postman_collection.json', ...rest] = process.argv.slice(2);
+const preset = PRESETS[COLLECTION];
+if (!preset && rest.length < 3) {
+  console.error(`No preset for "${COLLECTION}". Usage: node report.js <collection> <data.json> <env.json> <folder|"">`);
+  process.exit(1);
+}
+const [DATA, ENV, FOLDER] = [0, 1, 2].map(i => rest[i] ?? preset[i]);
 const clients = JSON.parse(fs.readFileSync(DATA));
 const baseUrl = (JSON.parse(fs.readFileSync(ENV)).values.find(v => /^https?:/.test(v.value)) || {}).value || '?';
 const title = COLLECTION.replace(/\.postman_collection\.json$/, '');
