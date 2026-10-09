@@ -1,24 +1,28 @@
 #!/usr/bin/env node
-// Runs the V5 folder per client and writes a Markdown report.
-// Usage: node report.js  ->  report-<stamp>.md
+// Runs a collection (folder) once per data row and writes a Markdown report.
+// Usage: node report.js [collection] [data.json] [env.json] [folder]  ->  report-<collection>-<stamp>.md
+// No args = Sunrise V5. Pass "" as folder to run the whole collection.
 const { execSync } = require('child_process');
 const GLOBAL = execSync('npm root -g').toString().trim();
 const newman = require(`${GLOBAL}/newman`);
 const fs = require('fs');
 
-const COLLECTION = 'EA Sunrise (hmac).postman_collection.json';
-const clients = require('./clients.json');
+const [COLLECTION = 'EA Sunrise (hmac).postman_collection.json',
+       DATA = 'clients.json', ENV = 'env.json', FOLDER = 'V5'] = process.argv.slice(2);
+const clients = JSON.parse(fs.readFileSync(DATA));
+const baseUrl = (JSON.parse(fs.readFileSync(ENV)).values.find(v => /^https?:/.test(v.value)) || {}).value || '?';
+const title = COLLECTION.replace(/\.postman_collection\.json$/, '');
 const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\..+/, '').replace('T', '-');
-const out = `report-${stamp}.md`;
+const out = `report-${title.replace(/\W+/g, '_').replace(/^_|_$/g, '')}-${stamp}.md`;
 
 const perClient = [];   // [{state, rows:[{name,method,url,code,status,body,ok}]}]
 let cur = null;
 
 newman.run({
   collection: COLLECTION,
-  folder: 'V5',
-  environment: 'env.json',
-  iterationData: 'clients.json',
+  folder: FOLDER || undefined,
+  environment: ENV,
+  iterationData: DATA,
   reporters: [],
 }, (err) => {
   if (err) { console.error(err); process.exit(1); }
@@ -57,8 +61,8 @@ function pretty(body) {
 function render() {
   const md = [];
   const total = { '2xx': 0, '4xx': 0, '5xx': 0, other: 0 };
-  md.push(`# Sunrise V5 QA Report — ${stamp}`, '');
-  md.push(`**Env:** \`http://st-snr.test.k8s.dontouch.group\` · **Clients:** ${perClient.length}`, '');
+  md.push(`# ${title}${FOLDER ? ` / ${FOLDER}` : ''} QA Report — ${stamp}`, '');
+  md.push(`**Env:** \`${baseUrl}\` · **Clients:** ${perClient.length}`, '');
 
   // Summary table
   md.push('## Summary', '');
