@@ -1025,15 +1025,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -1052,7 +1052,7 @@
                   "variable": [
                     {
                       "key": "escort_id",
-                      "value": "102"
+                      "value": "{{profileId}}"
                     }
                   ]
                 },
@@ -1128,15 +1128,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -1234,15 +1234,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -1321,15 +1321,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -1348,7 +1348,7 @@
                   "variable": [
                     {
                       "key": "gift_id",
-                      "value": "999999999"
+                      "value": "{{gift_id}}"
                     }
                   ]
                 }
@@ -1422,15 +1422,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -1523,15 +1523,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "Content-Type",
@@ -1660,15 +1660,15 @@
                       },
                       {
                         "key": "country",
-                        "value": "it"
+                        "value": "{{country}}"
                       },
                       {
                         "key": "rid",
-                        "value": "102"
+                        "value": "{{profileId}}"
                       },
                       {
                         "key": "cid",
-                        "value": "102"
+                        "value": "{{profileId}}"
                       },
                       {
                         "key": "Content-Type",
@@ -1789,15 +1789,15 @@
                       },
                       {
                         "key": "country",
-                        "value": "it"
+                        "value": "{{country}}"
                       },
                       {
                         "key": "rid",
-                        "value": "102"
+                        "value": "{{profileId}}"
                       },
                       {
                         "key": "cid",
-                        "value": "102"
+                        "value": "{{profileId}}"
                       }
                     ],
                     "url": {
@@ -1890,15 +1890,15 @@
                       },
                       {
                         "key": "country",
-                        "value": "it"
+                        "value": "{{country}}"
                       },
                       {
                         "key": "rid",
-                        "value": "102"
+                        "value": "{{profileId}}"
                       },
                       {
                         "key": "cid",
-                        "value": "102"
+                        "value": "{{profileId}}"
                       }
                     ],
                     "url": {
@@ -1918,7 +1918,7 @@
                       "variable": [
                         {
                           "key": "cart_detail_id",
-                          "value": "999999999"
+                          "value": "{{cart_detail_id}}"
                         }
                       ]
                     }
@@ -1993,15 +1993,15 @@
                       },
                       {
                         "key": "country",
-                        "value": "it"
+                        "value": "{{country}}"
                       },
                       {
                         "key": "rid",
-                        "value": "102"
+                        "value": "{{profileId}}"
                       },
                       {
                         "key": "cid",
-                        "value": "102"
+                        "value": "{{profileId}}"
                       },
                       {
                         "key": "Content-Type",
@@ -2126,15 +2126,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -2215,15 +2215,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -2242,7 +2242,7 @@
                   "variable": [
                     {
                       "key": "cart_id",
-                      "value": "999999999"
+                      "value": "{{cart_id}}"
                     }
                   ]
                 }
@@ -2371,15 +2371,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "Content-Type",
@@ -2486,15 +2486,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "Content-Type",
@@ -2606,15 +2606,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -2707,15 +2707,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -2735,7 +2735,7 @@
                   "variable": [
                     {
                       "key": "cart_detail_id",
-                      "value": "999999999"
+                      "value": "{{cart_detail_id}}"
                     }
                   ]
                 }
@@ -2871,19 +2871,19 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
-                  "raw": "{{AMF}}/api/amf/v2/ea-shop/ext/info?payload=eyJ3YWxsZXRfaWQiOjEyNDM5MTF9",
+                  "raw": "{{AMF}}/api/amf/v2/ea-shop/ext/info?payload={{wallet_payload}}",
                   "host": [
                     "{{AMF}}"
                   ],
@@ -2898,7 +2898,7 @@
                   "query": [
                     {
                       "key": "payload",
-                      "value": "eyJ3YWxsZXRfaWQiOjEyNDM5MTF9"
+                      "value": "{{wallet_payload}}"
                     }
                   ]
                 },
@@ -2974,19 +2974,19 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
-                  "raw": "{{AMF}}/api/amf/v2/ea-shop/ext/methods?payload=eyJ3YWxsZXRfaWQiOjEyNDM5MTF9",
+                  "raw": "{{AMF}}/api/amf/v2/ea-shop/ext/methods?payload={{wallet_payload}}",
                   "host": [
                     "{{AMF}}"
                   ],
@@ -3001,7 +3001,7 @@
                   "query": [
                     {
                       "key": "payload",
-                      "value": "eyJ3YWxsZXRfaWQiOjEyNDM5MTF9"
+                      "value": "{{wallet_payload}}"
                     }
                   ]
                 }
@@ -3075,19 +3075,19 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
-                  "raw": "{{AMF}}/api/amf/v2/ea-shop/ext/payments?payload=eyJ3YWxsZXRfaWQiOjEyNDM5MTF9",
+                  "raw": "{{AMF}}/api/amf/v2/ea-shop/ext/payments?payload={{wallet_payload}}",
                   "host": [
                     "{{AMF}}"
                   ],
@@ -3102,7 +3102,7 @@
                   "query": [
                     {
                       "key": "payload",
-                      "value": "eyJ3YWxsZXRfaWQiOjEyNDM5MTF9"
+                      "value": "{{wallet_payload}}"
                     }
                   ]
                 }
@@ -3176,15 +3176,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "Content-Type",
@@ -3291,15 +3291,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "Content-Type",
@@ -3411,15 +3411,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -3498,15 +3498,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -3525,7 +3525,7 @@
                   "variable": [
                     {
                       "key": "wallet_id",
-                      "value": "1243911"
+                      "value": "{{wallet_id}}"
                     }
                   ]
                 }
@@ -3599,15 +3599,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -3710,15 +3710,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "Content-Type",
@@ -3839,15 +3839,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "Content-Type",
@@ -3968,15 +3968,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -4081,15 +4081,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -4199,15 +4199,15 @@
                   },
                   {
                     "key": "country",
-                    "value": "it"
+                    "value": "{{country}}"
                   },
                   {
                     "key": "rid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   },
                   {
                     "key": "cid",
-                    "value": "102"
+                    "value": "{{profileId}}"
                   }
                 ],
                 "url": {
@@ -4290,15 +4290,15 @@
               },
               {
                 "key": "country",
-                "value": "it"
+                "value": "{{country}}"
               },
               {
                 "key": "rid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "cid",
-                "value": "102"
+                "value": "{{profileId}}"
               }
             ],
             "url": {
@@ -4322,7 +4322,7 @@
                 },
                 {
                   "key": "state_id",
-                  "value": "72"
+                  "value": "{{state_id}}"
                 }
               ]
             },
@@ -4403,15 +4403,15 @@
               },
               {
                 "key": "country",
-                "value": "it"
+                "value": "{{country}}"
               },
               {
                 "key": "rid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "cid",
-                "value": "102"
+                "value": "{{profileId}}"
               }
             ],
             "url": {
@@ -4492,15 +4492,15 @@
               },
               {
                 "key": "country",
-                "value": "it"
+                "value": "{{country}}"
               },
               {
                 "key": "rid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "cid",
-                "value": "102"
+                "value": "{{profileId}}"
               }
             ],
             "url": {
@@ -4603,15 +4603,15 @@
               },
               {
                 "key": "country",
-                "value": "it"
+                "value": "{{country}}"
               },
               {
                 "key": "rid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "cid",
-                "value": "102"
+                "value": "{{profileId}}"
               }
             ],
             "url": {
@@ -4690,15 +4690,15 @@
               },
               {
                 "key": "country",
-                "value": "it"
+                "value": "{{country}}"
               },
               {
                 "key": "rid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "cid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "Content-Type",
@@ -4803,15 +4803,15 @@
               },
               {
                 "key": "country",
-                "value": "it"
+                "value": "{{country}}"
               },
               {
                 "key": "rid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "cid",
-                "value": "102"
+                "value": "{{profileId}}"
               }
             ],
             "url": {
@@ -4892,15 +4892,15 @@
               },
               {
                 "key": "country",
-                "value": "it"
+                "value": "{{country}}"
               },
               {
                 "key": "rid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "cid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "Content-Type",
@@ -5007,15 +5007,15 @@
               },
               {
                 "key": "country",
-                "value": "it"
+                "value": "{{country}}"
               },
               {
                 "key": "rid",
-                "value": "102"
+                "value": "{{profileId}}"
               },
               {
                 "key": "cid",
-                "value": "102"
+                "value": "{{profileId}}"
               }
             ],
             "url": {
@@ -5129,7 +5129,33 @@
             "packages": {},
             "requests": {},
             "exec": [
-              ""
+              "// Per-client context: rid/cid = profileId (iteration data from clients.json, env fallback).",
+              "// Ids for read-only requests, once per iteration: clients.json cartItemId / walletId / giftId if filled,",
+              "// else the client's first one from its own v2 responses, else 999999999 (not found). Mutating requests keep fixed/fake ids.",
+              "const pid = pm.variables.get('profileId'), country = pm.variables.get('country');",
+              "const ctx = pid + ':' + country;",
+              "if (pm.collectionVariables.get('ctx') !== ctx) {",
+              "    pm.collectionVariables.set('ctx', ctx);",
+              "    const NONE = 999999999;",
+              "    const base = pm.variables.get('AMF') + '/api/amf/v2/ea-shop';",
+              "    const header = { Accept: 'application/json', Authorization: 'Bearer ' + pm.variables.get('jwt'), country, rid: pid, cid: pid };",
+              "    const get = (path, cb) => pm.sendRequest({ url: base + path, method: 'GET', header }, (err, res) => {",
+              "        let j = null;",
+              "        try { j = res.json(); } catch (e) { /* non-JSON / error */ }",
+              "        cb(j && j.data !== undefined ? j.data : j);  // v2 may or may not wrap in {status, data}",
+              "    });",
+              "    const first = (list, key = 'id') => (Array.isArray(list) && list[0] && list[0][key]) || NONE;",
+              "    const set = (k, v) => pm.collectionVariables.set(k, v);",
+              "    const own = k => { const v = pm.iterationData.get(k); return v && v !== 'NULL' ? v : null; };",
+              "    get('/cart', d => { set('cart_id', (d && d.id) || NONE); set('cart_detail_id', own('cartItemId') || first(d && d.items)); });",
+              "    get('/payments', d => {",
+              "        const w = Number(own('walletId')) || first(d);",
+              "        set('wallet_id', w);",
+              "        set('wallet_payload', CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(JSON.stringify({ wallet_id: w }))));",
+              "    });",
+              "    get('/gifts', d => set('gift_id', own('giftId') || first(d && (d.gifts || d))));",
+              "    get('/info', d => set('state_id', (d && d.profile && d.profile.geo_id) || 72));",
+              "}"
             ]
           }
         },
@@ -5140,147 +5166,135 @@
             "packages": {},
             "requests": {},
             "exec": [
-              "// ─────────────────────────────────────────────────────────────────\r",
-              "// v2 Folder — Post-Response Test Script\r",
-              "// Surface: AMF /api/amf/v2/ea-shop/*\r",
-              "// ─────────────────────────────────────────────────────────────────\r",
-              "\r",
-              "const requestName = pm.info.requestName;\r",
-              "const statusCode  = pm.response.code;\r",
-              "\r",
-              "// ── 1. No server errors ──────────────────────────────────────────\r",
-              "pm.test(\"No server error (not 500)\", () => {\r",
-              "    pm.expect(statusCode).to.not.equal(500);\r",
-              "});\r",
-              "\r",
-              "// ── 2. Status code is 200 ────────────────────────────────────────\r",
-              "pm.test(\"Status code is 200\", () => {\r",
-              "    if (statusCode === 401) {\r",
-              "        console.warn(`[${requestName}] 401 Unauthorized — auth token may be missing or expired.`);\r",
-              "        return;\r",
-              "    }\r",
-              "    pm.expect(statusCode).to.equal(200);\r",
-              "});\r",
-              "\r",
-              "if (statusCode === 401) {\r",
-              "    console.warn(`[${requestName}] Structural assertions skipped due to 401.`);\r",
-              "} else {\r",
-              "\r",
-              "    // ── 3. Response time ─────────────────────────────────────────\r",
-              "    pm.test(\"Response time is under 5000ms\", () => {\r",
-              "        pm.expect(pm.response.responseTime).to.be.below(5000);\r",
-              "    });\r",
-              "\r",
-              "    // ── 4. Content-Type ──────────────────────────────────────────\r",
-              "    pm.test(\"Content-Type contains application/json\", () => {\r",
-              "        pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
-              "    });\r",
-              "\r",
-              "    // ── 5. Valid JSON ────────────────────────────────────────────\r",
-              "    let body;\r",
-              "    pm.test(\"Response body is valid JSON\", () => {\r",
-              "        try {\r",
-              "            body = pm.response.json();\r",
-              "            pm.expect(body).to.satisfy(b => typeof b === \"object\" && b !== null);\r",
-              "        } catch (e) {\r",
-              "            pm.expect.fail(\"Response is not valid JSON: \" + e.message);\r",
-              "        }\r",
-              "    });\r",
-              "\r",
-              "    if (body === undefined) {\r",
-              "        try { body = pm.response.json(); } catch (e) { body = null; }\r",
-              "    }\r",
-              "\r",
-              "    if (body !== null && body !== undefined) {\r",
-              "\r",
-              "        // ── 6. Envelope checks (conditional) ─────────────────────\r",
-              "        if (Object.prototype.hasOwnProperty.call(body, \"status\")) {\r",
-              "            pm.test(\"Envelope: status === 'ok'\", () => {\r",
-              "                pm.expect(body.status).to.equal(\"ok\");\r",
-              "            });\r",
-              "        }\r",
-              "        if (Object.prototype.hasOwnProperty.call(body, \"data\")) {\r",
-              "            pm.test(\"Envelope: data is a non-null object\", () => {\r",
-              "                pm.expect(body.data).to.be.an(\"object\").and.not.equal(null);\r",
-              "                pm.expect(Array.isArray(body.data)).to.be.false;\r",
-              "            });\r",
-              "        }\r",
-              "\r",
-              "        // ── 7. Request-specific structural checks ─────────────────\r",
-              "        switch (requestName) {\r",
-              "\r",
-              "            case \"detail\":\r",
-              "                pm.test(\"[detail] Has config, products, state keys\", () => {\r",
-              "                    pm.expect(body).to.have.all.keys(\"config\", \"products\", \"state\");\r",
-              "                });\r",
-              "                pm.test(\"[detail] products is a non-empty array\", () => {\r",
-              "                    pm.expect(body.products).to.be.an(\"array\").and.not.be.empty;\r",
-              "                });\r",
-              "                pm.test(\"[detail] Each product has id, name, price, tier\", () => {\r",
-              "                    body.products.forEach((p, i) => {\r",
-              "                        pm.expect(p.id,    `products[${i}].id`).to.be.a(\"number\");\r",
-              "                        pm.expect(p.name,  `products[${i}].name`).to.be.a(\"string\");\r",
-              "                        pm.expect(p.price, `products[${i}].price`).to.be.a(\"number\");\r",
-              "                        pm.expect(p.tier,  `products[${i}].tier`).to.be.a(\"string\");\r",
-              "                    });\r",
-              "                });\r",
-              "                pm.test(\"[detail] state has ID and Provincia\", () => {\r",
-              "                    pm.expect(body.state).to.have.property(\"ID\").that.is.a(\"number\");\r",
-              "                    pm.expect(body.state).to.have.property(\"Provincia\").that.is.a(\"string\");\r",
-              "                });\r",
-              "                break;\r",
-              "\r",
-              "            case \"purchase\":\r",
-              "                pm.test(\"[purchase] data.labels exists\", () => {\r",
-              "                    pm.expect(body.data).to.have.property(\"labels\").that.is.an(\"object\");\r",
-              "                });\r",
-              "                pm.test(\"[purchase] data.labels has label (string) and error fields\", () => {\r",
-              "                    pm.expect(body.data.labels).to.have.property(\"label\").that.is.a(\"string\");\r",
-              "                    pm.expect(body.data.labels).to.have.property(\"error\");\r",
-              "                });\r",
-              "                break;\r",
-              "\r",
-              "            case \"payment\":\r",
-              "                pm.test(\"[payment] data has redirect_url key\", () => {\r",
-              "                    pm.expect(body.data).to.have.property(\"redirect_url\");\r",
-              "                });\r",
-              "                break;\r",
-              "\r",
-              "            case \"states\":\r",
-              "                pm.test(\"[states] Response is an array\", () => {\r",
-              "                    const arr = Array.isArray(body) ? body : (body.data || []);\r",
-              "                    pm.expect(arr).to.be.an(\"array\");\r",
-              "                });\r",
-              "                pm.test(\"[states] Each state has ID and Provincia\", () => {\r",
-              "                    const arr = Array.isArray(body) ? body : (body.data || []);\r",
-              "                    arr.slice(0, 5).forEach((s, i) => {\r",
-              "                        pm.expect(s.ID,        `states[${i}].ID`).to.exist;\r",
-              "                        pm.expect(s.Provincia, `states[${i}].Provincia`).to.be.a(\"string\");\r",
-              "                    });\r",
-              "                });\r",
-              "                break;\r",
-              "\r",
-              "            case \"charge\":\r",
-              "            case \"addons\":\r",
-              "            case \"methods\":\r",
-              "                pm.test(`[${requestName}] Response is a non-null object or array`, () => {\r",
-              "                    pm.expect(body).to.satisfy(b => typeof b === \"object\" && b !== null);\r",
-              "                });\r",
-              "                break;\r",
-              "\r",
-              "            case \"info\":\r",
-              "                pm.test(\"[info] Response is a non-null object\", () => {\r",
-              "                    pm.expect(body).to.be.an(\"object\").and.not.equal(null);\r",
-              "                });\r",
-              "                break;\r",
-              "\r",
-              "            default:\r",
-              "                pm.test(`[${requestName}] Response is a non-null object or array`, () => {\r",
-              "                    pm.expect(body).to.satisfy(b => typeof b === \"object\" && b !== null);\r",
-              "                });\r",
-              "                break;\r",
-              "        }\r",
-              "    }\r",
+              "// ─────────────────────────────────────────────────────────────────",
+              "// v2 Folder — Post-Response Test Script",
+              "// Surface: AMF /api/amf/v2/ea-shop/*",
+              "// ─────────────────────────────────────────────────────────────────",
+              "",
+              "const code = pm.response.code;",
+              "// Key on method + path (numeric segments → :id): request names collide (detail, info, payment, purchase, methods, delete),",
+              "// and path variables are already resolved here, so getPath(true) does not give the :param template.",
+              "const endpoint = `${pm.request.method} ${pm.request.url.getPath()",
+              "    .replace(/^\\/api\\/amf\\/v2\\/ea-shop/, \"\")",
+              "    .replace(/\\/\\d+(?=\\/|$)/g, \"/:id\")}`;",
+              "",
+              "// ── 1. No server errors ──────────────────────────────────────────",
+              "pm.test(\"No server error (5xx)\", () => {",
+              "    pm.expect(code).to.be.below(500);",
+              "});",
+              "",
+              "// ── 2. Status code is 200 ────────────────────────────────────────",
+              "pm.test(\"Status code is 200\", () => {",
+              "    pm.expect(code, code === 401 ? \"401 — JWT missing or expired\" : `HTTP ${code}`).to.equal(200);",
+              "});",
+              "",
+              "// ── 3. Response time ─────────────────────────────────────────────",
+              "pm.test(\"Response time is under 5000ms\", () => {",
+              "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+              "});",
+              "",
+              "// ── 4. Content-Type ──────────────────────────────────────────────",
+              "pm.test(\"Content-Type contains application/json\", () => {",
+              "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
+              "});",
+              "",
+              "// ── 5. Valid JSON ────────────────────────────────────────────────",
+              "let body = null;",
+              "try { body = pm.response.json(); } catch (e) { /* asserted below */ }",
+              "",
+              "pm.test(\"Response body is valid JSON\", () => {",
+              "    pm.expect(body, \"body is not a JSON object/array\").to.satisfy(b => typeof b === \"object\" && b !== null);",
+              "});",
+              "",
+              "// ── 6. Errors must not leak server internals ─────────────────────",
+              "if (body && code >= 400) {",
+              "    pm.test(\"Error body does not leak stack trace\", () => {",
+              "        pm.expect(body).to.not.have.property(\"trace\");",
+              "    });",
+              "}",
+              "",
+              "if (body && code === 200) {",
+              "",
+              "    // ── 7. Envelope checks (conditional) ─────────────────────────",
+              "    if (!Array.isArray(body) && \"status\" in body) {",
+              "        pm.test(\"Envelope: status === 'ok'\", () => {",
+              "            pm.expect(body.status).to.equal(\"ok\");",
+              "        });",
+              "    }",
+              "    if (!Array.isArray(body) && \"data\" in body) {",
+              "        pm.test(\"Envelope: data is an object or array\", () => {",
+              "            pm.expect(body.data).to.satisfy(d => typeof d === \"object\" && d !== null);",
+              "        });",
+              "    }",
+              "",
+              "    // ── 8. Endpoint-specific structural checks ───────────────────",
+              "    switch (endpoint) {",
+              "",
+              "        case \"GET /detail/:id/:id\":",
+              "            pm.test(\"[detail] Has config, products, state keys\", () => {",
+              "                pm.expect(body).to.include.all.keys(\"config\", \"products\", \"state\");",
+              "            });",
+              "            pm.test(\"[detail] products is a non-empty array of {id, name, price, tier}\", () => {",
+              "                pm.expect(body.products).to.be.an(\"array\").that.is.not.empty;",
+              "                body.products.forEach((p, i) => {",
+              "                    pm.expect(p.id,    `products[${i}].id`).to.be.a(\"number\");",
+              "                    pm.expect(p.name,  `products[${i}].name`).to.be.a(\"string\");",
+              "                    pm.expect(p.price, `products[${i}].price`).to.be.a(\"number\");",
+              "                    pm.expect(p.tier,  `products[${i}].tier`).to.be.a(\"string\");",
+              "                });",
+              "            });",
+              "            pm.test(\"[detail] state has ID and Provincia\", () => {",
+              "                pm.expect(body.state).to.have.property(\"ID\").that.is.a(\"number\");",
+              "                pm.expect(body.state).to.have.property(\"Provincia\").that.is.a(\"string\");",
+              "            });",
+              "            break;",
+              "",
+              "        case \"GET /purchase\":",
+              "            pm.test(\"[purchase] data.labels has label (string) and error\", () => {",
+              "                pm.expect(body.data.labels).to.be.an(\"object\");",
+              "                pm.expect(body.data.labels).to.have.property(\"label\").that.is.a(\"string\");",
+              "                pm.expect(body.data.labels).to.have.property(\"error\");",
+              "            });",
+              "            break;",
+              "",
+              "        case \"POST /payment\":",
+              "            pm.test(\"[payment] data.redirect_url is string or null\", () => {",
+              "                pm.expect(body.data).to.have.property(\"redirect_url\");",
+              "                pm.expect(body.data.redirect_url).to.satisfy(u => u === null || typeof u === \"string\");",
+              "            });",
+              "            break;",
+              "",
+              "        case \"GET /states/:id/:id\":",
+              "            pm.test(\"[states] Non-empty array of {id, name}\", () => {",
+              "                pm.expect(body).to.be.an(\"array\").that.is.not.empty;",
+              "                body.forEach((s, i) => {",
+              "                    pm.expect(s.id,   `states[${i}].id`).to.exist;",
+              "                    pm.expect(s.name, `states[${i}].name`).to.be.a(\"string\");",
+              "                });",
+              "            });",
+              "            break;",
+              "",
+              "        case \"GET /charge/:id/:id\":",
+              "            pm.test(\"[charge] data is a non-empty array of {amount}\", () => {",
+              "                pm.expect(body.data).to.be.an(\"array\").that.is.not.empty;",
+              "                body.data.forEach((c, i) => pm.expect(c.amount, `data[${i}].amount`).to.be.a(\"number\"));",
+              "            });",
+              "            break;",
+              "",
+              "        case \"GET /addons\":",
+              "        case \"POST /methods\":",
+              "            pm.test(`[${endpoint}] data is a non-empty array of {id}`, () => {",
+              "                pm.expect(body.data).to.be.an(\"array\").that.is.not.empty;",
+              "                body.data.forEach((x, i) => pm.expect(x.id, `data[${i}].id`).to.be.a(\"number\"));",
+              "            });",
+              "            break;",
+              "",
+              "        case \"GET /info\":",
+              "            pm.test(\"[info] data.profile has id\", () => {",
+              "                pm.expect(body.data.profile).to.have.property(\"id\").that.is.a(\"number\");",
+              "            });",
+              "            break;",
+              "    }",
               "}"
             ]
           }

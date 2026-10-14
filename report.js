@@ -11,7 +11,7 @@ const fs = require('fs');
 // collection -> [data, env, folder]
 const PRESETS = {
   'EA Sunrise (hmac).postman_collection.json': ['clients.json', 'env.json', 'V5'],
-  'EA Api Shop (jwt).postman_collection.json': ['ea-shop-data.json', 'env-ea-shop.json', 'v2'],
+  'EA Api Shop (jwt).postman_collection.json': ['clients.json', 'env-ea-shop.json', 'v2'],
 };
 const [COLLECTION = 'EA Sunrise (hmac).postman_collection.json', ...rest] = process.argv.slice(2);
 const preset = PRESETS[COLLECTION];
@@ -40,10 +40,11 @@ newman.run({
   fs.writeFileSync(out, render());
   console.log(`Report: ${out}`);
 }).on('request', (err, args) => {
+  if (!args.item || !args.item.name) return;  // pm.sendRequest lookups from collection scripts
   const iter = args.cursor.iteration;
   if (!cur || cur.iter !== iter) {
     const c = clients[iter] || {};
-    cur = { iter, state: c.state || c.case || '?', rows: [] };
+    cur = { iter, state: [c.case || c.state, c.country].filter(Boolean).join(' · ') || '?', rows: [] };
     perClient.push(cur);
   }
   const method = args.request.method;
@@ -56,6 +57,12 @@ newman.run({
     const body = args.response ? args.response.stream.toString() : '';
     cur.rows.push({ name: args.item.name, method, url, code, status, body, ok: code >= 200 && code < 300 });
   }
+}).on('assertion', (err, args) => {
+  // pm.test failures from the collection's post-response scripts
+  if (!err || !cur || !cur.rows.length) return;
+  const r = cur.rows[cur.rows.length - 1];
+  r.ok = false;
+  (r.fails = r.fails || []).push(`${args.assertion}: ${err.message}`);
 });
 
 function bucket(code) {
@@ -85,14 +92,15 @@ function render() {
   });
   md.push(`| | **Total** | **${total['2xx']}** | **${total['4xx']}** | **${total['5xx']}** |`, '');
 
-  // Failures (non-2xx) with bodies
+  // Failures (non-2xx or failed assertions) with bodies
   const fails = [];
   perClient.forEach((c, i) => c.rows.forEach(r => { if (!r.ok) fails.push({ i, state: c.state, r }); }));
-  md.push(`## Failures (${fails.length})`, '');
-  if (!fails.length) md.push('_None — all requests 2xx._', '');
+  md.push(`## Failures — non-2xx or failed assertions (${fails.length})`, '');
+  if (!fails.length) md.push('_None — all requests 2xx, all assertions passed._', '');
   fails.forEach(({ i, state, r }) => {
     md.push(`### ❌ ${r.name} — client ${i + 1} (${state})`, '');
     md.push(`\`${r.method} ${r.url}\``, '', `**${r.code} ${r.status}**`, '');
+    if (r.fails) md.push(...r.fails.map(f => `- ${f}`), '');
     if (r.body) md.push('```json', pretty(r.body), '```', '');
   });
 

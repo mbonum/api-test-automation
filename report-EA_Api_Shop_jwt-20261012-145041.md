@@ -1,4 +1,4 @@
-# EA Api Shop (jwt) / v2 QA Report — 20261009-153600
+# EA Api Shop (jwt) / v2 QA Report — 20261012-145041
 
 **Env:** `http://st-bee.test.k8s.dontouch.group` · **Clients:** 1
 

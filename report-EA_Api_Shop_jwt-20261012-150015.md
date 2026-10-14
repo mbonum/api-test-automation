@@ -1,4 +1,4 @@
-# EA Api Shop (jwt) / v2 QA Report — 20261009-143440
+# EA Api Shop (jwt) / v2 QA Report — 20261012-150015
 
 **Env:** `http://st-bee.test.k8s.dontouch.group` · **Clients:** 1
 
@@ -9,13 +9,598 @@
 | 1 | operatore 19 | 17 | 15 | 5 |
 | | **Total** | **17** | **15** | **5** |
 
-## Failures (20)
+## Failures — non-2xx or failed assertions (21)
+
+### ❌ Get Toolbox da attivare — client 1 (operatore 19)
+
+`GET http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/activators/102`
+
+**200 OK**
+
+- Response time is under 5000ms: expected 8784 to be below 5000
+
+```json
+{
+  "status": "ok",
+  "data": {
+    "toolboxes": [
+      {
+        "id": 1,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 63,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 99,
+        "escort_has_gift_id": 0,
+        "product_type": 7,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 28,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 5,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 12,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 64,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 71,
+        "escort_has_gift_id": 0,
+        "product_type": 22,
+        "base_price": 0,
+        "expiry": "2024-01-14 23:59:59",
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 2,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 62,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 6,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 7,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 51,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 17,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 15,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 18,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 14,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 45,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 27,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 80,
+        "escort_has_gift_id": 0,
+        "product_type": 4,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 81,
+        "escort_has_gift_id": 0,
+        "product_type": 4,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 82,
+        "escort_has_gift_id": 0,
+        "product_type": 4,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 9,
+        "escort_has_gift_id": 0,
+        "product_type": 2,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 40,
+        "escort_has_gift_id": 0,
+        "product_type": 2,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 104,
+        "escort_has_gift_id": 0,
+        "product_type": 28,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 54,
+        "escort_has_gift_id": 0,
+        "product_type": 18,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 55,
+        "escort_has_gift_id": 0,
+        "product_type": 18,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 56,
+        "escort_has_gift_id": 0,
+        "product_type": 18,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 57,
+        "escort_has_gift_id": 0,
+        "product_type": 18,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 53,
+        "escort_has_gift_id": 0,
+        "product_type": 18,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 58,
+        "escort_has_gift_id": 0,
+        "product_type": 18,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 92,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 91,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 90,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 93,
+        "escort_has_gift_id": 0,
+        "product_type": 8,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 94,
+        "escort_has_gift_id": 0,
+        "product_type": 5,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 95,
+        "escort_has_gift_id": 0,
+        "product_type": 6,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 8,
+        "escort_has_gift_id": 0,
+        "product_type": 5,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 96,
+        "escort_has_gift_id": 0,
+        "product_type": 6,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 59,
+        "escort_has_gift_id": 0,
+        "product_type": 19,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 101,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 16,
+        "escort_has_gift_id": 0,
+        "product_type": 4,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 105,
+        "escort_has_gift_id": 0,
+        "product_type": 3,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 89,
+        "escort_has_gift_id": 0,
+        "product_type": 3,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 88,
+        "escort_has_gift_id": 0,
+        "product_type": 2,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 87,
+        "escort_has_gift_id": 0,
+        "product_type": 4,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      },
+      {
+        "id": 100,
+        "escort_has_gift_id": 0,
+        "product_type": 1,
+        "base_price": 0,
+        "expiry": null,
+        "reason": null,
+        "name_number": null,
+        "canDelete": true,
+        "canRedeem": true,
+        "reason_not_available": null
+      }
+    ],
+    "country": "it"
+  }
+}
+```
 
 ### ❌ Activate Toolbox — client 1 (operatore 19)
 
 `PUT http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/activators/999999999`
 
 **404 Not Found**
+
+- Status code is 200: HTTP 404: expected 404 to equal 200
 
 ```json
 {
@@ -30,6 +615,8 @@
 
 **404 Not Found**
 
+- Status code is 200: HTTP 404: expected 404 to equal 200
+
 ```json
 {
   "status": "ko",
@@ -42,6 +629,8 @@
 `PUT http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/gifts/999999999/redeem`
 
 **418 Unknown**
+
+- Status code is 200: HTTP 418: expected 418 to equal 200
 
 ```json
 {
@@ -61,6 +650,8 @@
 
 **404 Not Found**
 
+- Status code is 200: HTTP 404: expected 404 to equal 200
+
 ```json
 {
   "status": "ko",
@@ -73,6 +664,8 @@
 `DELETE http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/cart/999999999`
 
 **404 Not Found**
+
+- Status code is 200: HTTP 404: expected 404 to equal 200
 
 ```json
 {
@@ -87,6 +680,8 @@
 
 **404 Not Found**
 
+- Status code is 200: HTTP 404: expected 404 to equal 200
+
 ```json
 {
   "status": "ko",
@@ -99,6 +694,8 @@
 `POST http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/cart/999999999/geo`
 
 **404 Not Found**
+
+- Status code is 200: HTTP 404: expected 404 to equal 200
 
 ```json
 {
@@ -113,6 +710,8 @@
 
 **404 Not Found**
 
+- Status code is 200: HTTP 404: expected 404 to equal 200
+
 ```json
 {
   "status": "ko",
@@ -125,6 +724,8 @@
 `POST http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/cart/order`
 
 **422 Unprocessable Entity**
+
+- Status code is 200: HTTP 422: expected 422 to equal 200
 
 ```json
 {
@@ -145,6 +746,8 @@
 
 **404 Not Found**
 
+- Status code is 200: HTTP 404: expected 404 to equal 200
+
 ```json
 {
   "status": "ko",
@@ -158,6 +761,8 @@
 
 **404 Not Found**
 
+- Status code is 200: HTTP 404: expected 404 to equal 200
+
 ```json
 {
   "status": "ko",
@@ -170,6 +775,10 @@
 `POST http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/payments/999999999`
 
 **500 Internal Server Error**
+
+- No server error (5xx): expected 500 to be below 500
+- Status code is 200: HTTP 500: expected 500 to equal 200
+- Error body does not leak stack trace: expected { status: 'ko', code: +0, …(2) } to not have property 'trace'
 
 ```json
 {
@@ -185,6 +794,8 @@
 `POST http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/payments/999999999/file`
 
 **422 Unprocessable Entity**
+
+- Status code is 200: HTTP 422: expected 422 to equal 200
 
 ```json
 {
@@ -205,6 +816,9 @@
 
 **501 Not Implemented**
 
+- No server error (5xx): expected 501 to be below 500
+- Status code is 200: HTTP 501: expected 501 to equal 200
+
 ```json
 {
   "status": "ko",
@@ -217,6 +831,9 @@
 `DELETE http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/payments/999999999/file/1`
 
 **501 Not Implemented**
+
+- No server error (5xx): expected 501 to be below 500
+- Status code is 200: HTTP 501: expected 501 to equal 200
 
 ```json
 {
@@ -231,6 +848,8 @@
 
 **404 Not Found**
 
+- Status code is 200: HTTP 404: expected 404 to equal 200
+
 ```json
 {
   "status": "ko",
@@ -243,6 +862,10 @@
 `GET http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/detail/1/72`
 
 **500 Internal Server Error**
+
+- No server error (5xx): expected 500 to be below 500
+- Status code is 200: HTTP 500: expected 500 to equal 200
+- Error body does not leak stack trace: expected { status: 'ko', code: +0, …(2) } to not have property 'trace'
 
 ```json
 {
@@ -259,6 +882,10 @@
 
 **500 Internal Server Error**
 
+- No server error (5xx): expected 500 to be below 500
+- Status code is 200: HTTP 500: expected 500 to equal 200
+- Error body does not leak stack trace: expected { status: 'ko', code: +0, …(2) } to not have property 'trace'
+
 ```json
 {
   "status": "ko",
@@ -274,6 +901,8 @@
 
 **422 Unprocessable Entity**
 
+- Status code is 200: HTTP 422: expected 422 to equal 200
+
 ```json
 {
   "status": "ko",
@@ -286,6 +915,8 @@
 `GET http://st-bee.test.k8s.dontouch.group/api/amf/v2/ea-shop/states/1/72`
 
 **422 Unprocessable Entity**
+
+- Status code is 200: HTTP 422: expected 422 to equal 200
 
 ```json
 {
@@ -309,7 +940,7 @@
 
 | Request | Method | Status |
 |---|---|---|
-| Get Toolbox da attivare | GET | ✅ 200 OK |
+| Get Toolbox da attivare | GET | ❌ 200 OK |
 | Activate Toolbox | PUT | ❌ 404 Not Found |
 | list | GET | ✅ 200 OK |
 | detail | GET | ❌ 404 Not Found |
