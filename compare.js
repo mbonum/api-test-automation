@@ -1,19 +1,24 @@
 #!/usr/bin/env node
-// Data parity check: new v2 (AMF) vs legacy v4 (API), once per client in clients.json, read-only requests only.
-// Usage: node compare.js [clients.json] [env.json]  ->  report-compare-<stamp>.md      |  node compare.js --selftest
-// rid/cid = profileId, country = client country. Both sides are unwrapped from {status, data} and deep-diffed;
+// Data parity check: BEES amf/v2 (AMF, V5 shop) vs a reference API on {{API}}: v5 (/api/v5/ea-shop, default) or legacy v4
+// (/api/ea-shop/v4), once per client in clients.json, read-only requests only.
+// Usage: node compare.js [clients.json] [env.json] [--ref=v5|v4]  ->  report-compare-<ref>-<stamp>.md  |  node compare.js --selftest
+// rid/cid = escort_id (profileId), country = client country. v5 shares the AMF contract: same path unless `v5` is set
+// (null = route missing on v5: AMF status check only), ids compared; `pre`/`map`/`note` are v4-only. Both sides are unwrapped from {status, data} and deep-diffed;
 // still-redesigned endpoints use `map` [[v2Path, v4Path]], lists use `lists` (items matched by id/key, not position).
-// `{key}` in a path: clients.json field if filled, else IDS fallback; `{pair.path}`: from an earlier pair's v2 data.
+// `{key}` in a path: clients.json field if filled, else IDS fallback; `{pair.path}` / `{v4.pair.path}`: from an earlier pair's v2 / reference data.
+// Gift/toolbox ids differ by design (v2 = V5 ids, v4 = legacy dbo.gifts, linked by config.old_gift_id): each side uses its own list's id.
 const fs = require('fs');
 const assert = require('assert');
+const REF = (process.argv.find(a => a.startsWith('--ref=')) || '--ref=v5').slice(6);
 
 // clients.json fields (filled by hand as data becomes available) -> fallback from the client's own v2 responses
 const IDS = {
   cartItemId: d => get(d, 'cart.items.0.id'),
   walletId: d => get(d, 'payments.0.id'),
-  giftId: d => get(d, 'gifts.0.id') ?? get(d, 'gifts.gifts.0.id'),
   stateId: d => get(d, 'info.profile.geo_id') ?? 72,  // clients without geo: any province
 };
+const dropId = x => (x !== null && typeof x === 'object' && !Array.isArray(x) ? (({ id, ...r }) => r)(x) : x);
+const noIds = (a, b) => [a, b].map(x => (Array.isArray(x) ? x.map(dropId) : dropId(x)));
 // [[v2Path, v4Path]] — /info is still redesigned in v2
 const INFO_MAP = [
   ['profile.id', 'client.id'], ['customer.id', 'client.id'], ['profile.owner_id', 'client.id'],
@@ -37,26 +42,28 @@ const INFO_MAP = [
   ['cart.pending_payments', 'cart.pending_payments'], ['passport_geo.method', 'passportGeo.method'],
   ['passport_geo.method', 'client.passportGeo.method'], ['passport_geo.passports', 'passportGeo.passports'],
 ];
-// {name, v2:[method, path, body?], v4:[...] | null (v2 only, status check), map?, lists?: [path], pre?(v2, v4) -> [v2, v4], note?}
+// {name, v2:[method, path, body?], v4:[...] | null (v2 only, status check), v5?: same, map?, lists?: [path], pre?(v2, v4) -> [v2, v4], note?}
 const PAIRS = [
-  { name: 'info', v2: ['GET', '/info'], v4: ['GET', '/info'], map: INFO_MAP },
+  { name: 'info', v2: ['GET', '/info'], v4: ['GET', '/info'], v5: null, map: INFO_MAP },
   { name: 'cart', v2: ['GET', '/cart'], v4: ['GET', '/cart'] },
   { name: 'cart-by-id', v2: ['GET', '/cart/{cart.id}'], v4: ['GET', '/cart'], note: 'v4 has no cart-by-id: compared with current cart' },
-  { name: 'cart-geo', v2: ['GET', '/cart/{cartItemId}/geo'], v4: ['GET', '/cart/{cartItemId}/geo'], lists: [''],
+  { name: 'cart-geo', v2: ['GET', '/cart/{cartItemId}/geo'], v4: ['GET', '/cart/{cartItemId}/geo'], v5: null, lists: [''],
     pre: (a, b) => [Array.isArray(a) ? a.map(({ id, name }) => ({ id, name })) : a, b], note: 'compared as {id, name} (v2 adds geo fields)' },
   { name: 'fidelity-preview', v2: ['GET', '/fidelity/preview/{cartItemId}'], v4: ['GET', '/fidelity/preview/{cartItemId}'] },
   { name: 'fidelity', v2: ['GET', '/fidelity/cart-success'], v4: ['GET', '/fidelity/cart-success'] },
-  { name: 'gifts', v2: ['GET', '/gifts'], v4: ['GET', '/gifts'] },
-  { name: 'gift-detail', v2: ['GET', '/gifts/{giftId}'], v4: ['GET', '/gifts/{giftId}'] },
-  { name: 'activators', v2: ['GET', '/activators/{profileId}'], v4: ['GET', '/activators/{profileId}'] },
+  { name: 'gifts', v2: ['GET', '/gifts'], v4: ['GET', '/gifts'], pre: noIds, note: 'id not compared (V5 vs legacy ids)' },
+  { name: 'gift-detail', v2: ['GET', '/gifts/{gifts.0.id}'], v4: ['GET', '/gifts/{v4.gifts.0.id}'], pre: noIds,
+    note: "each side's first gift from its own /gifts; id not compared (V5 vs legacy ids)" },
+  { name: 'activators', v2: ['GET', '/activators/{profileId}'], v4: ['GET', '/activators/{profileId}'], pre: noIds,
+    note: 'id not compared (V5 vs legacy ids)' },
   { name: 'payments', v2: ['GET', '/payments'], v4: null, note: 'no v4 list endpoint' },
   { name: 'payment-single', v2: ['GET', '/payments/{walletId}'], v4: ['GET', '/payments/{walletId}'] },
   { name: 'detail', v2: ['GET', '/detail/1/{stateId}'], v4: ['GET', '/detail/1/{stateId}'], lists: ['products', 'products.*.addons:bonus_name'] },
-  { name: 'states', v2: ['GET', '/states/1/{stateId}'], v4: ['GET', '/states'], lists: [''] },
+  { name: 'states', v2: ['GET', '/states/1/{stateId}'], v4: ['GET', '/states'], v5: ['GET', '/states'], lists: [''] },
   { name: 'addons', v2: ['GET', '/addons'], v4: ['GET', '/addons'], lists: ['', '*.title:locale', '*.description:locale'] },
-  ...['0/0', '15/1500'].map(c => ({ name: `charge-${c}`, v2: ['GET', `/charge/${c}`], v4: ['GET', `/charge/${c}`] })),
-  { name: 'methods', v2: ['POST', '/methods', { charge: 100 }], v4: ['POST', '/methods', { charge: 100 }] },
-  { name: 'reseller-info', v2: ['GET', '/reseller/info'], v4: ['GET', '/reseller/info'] },
+  ...['0/0', '15/1500'].map(c => ({ name: `charge-${c}`, v2: ['GET', `/charge/${c}`], v4: ['GET', `/charge/${c}`], v5: null })),
+  { name: 'methods', v2: ['POST', '/methods', { charge: 100 }], v4: ['POST', '/methods', { charge: 100 }], v5: null },
+  { name: 'reseller-info', v2: ['GET', '/reseller/info'], v4: ['GET', '/reseller/info'], v5: null },
 ];
 // [endpoint, reason] — not data-diffed
 const SKIPPED = [
@@ -123,7 +130,8 @@ function mapDiff(a, b, map) {
   return out;
 }
 const soft = d => ['type', 'format', 'extra-in-v2', 'order'].includes(d.kind);  // additive / same value, non-breaking
-const unwrap = j => (isObj(j) && !Array.isArray(j) && 'status' in j && 'data' in j ? j.data : j);
+// envelopes: {status, data} (AMF, v4), {data} / {data, country} (v5)
+const unwrap = j => (isObj(j) && !Array.isArray(j) && 'data' in j && Object.keys(j).every(k => ['status', 'data', 'country'].includes(k)) ? j.data : j);
 // `lists` specs 'path' or 'path:key' ('*' = every element, '' = root): match list items by id (or key) instead of
 // position, so a missing/extra item shows once instead of shifting every later one; a different order is a soft 'order' diff
 function keyed(o, keys, key, at, orders) {
@@ -177,8 +185,10 @@ function selftest() {
   const o2 = [];
   const [n2, n4] = keyLists({ l: [{ id: 1, t: [{ k: 'b' }, { k: 'a' }] }] }, { l: [{ id: 1, t: [{ k: 'a' }, { k: 'b' }] }] }, ['l', 'l.*.t:k'], o2);
   assert.deepStrictEqual([o2.map(d => d.path), deepDiff(n2, n4)], [['l.1.t'], []]);
+  assert.deepStrictEqual(noIds([{ id: 16, n: 1 }], { id: 28, n: 1 }), [[{ n: 1 }], { n: 1 }]);
   assert.deepStrictEqual(unwrap({ status: 'ok', data: [1] }), [1]);
   assert.deepStrictEqual(unwrap({ status: 'ok', id: 1 }), { status: 'ok', id: 1 });
+  assert.deepStrictEqual(unwrap({ data: [], country: 'IT' }), []);
   assert.strictEqual(verdict([{ kind: 'order' }]), '⚠️');
   assert.strictEqual(verdict([]), '✅');
   assert.strictEqual(verdict([{ kind: 'format' }, { kind: 'extra-in-v2' }]), '⚠️');
@@ -204,8 +214,8 @@ async function call(base, env, client, method, path, body) {
 }
 
 async function runClient(client, env) {
-  const V2 = `${env.AMF}/api/amf/v2/ea-shop`, V4 = `${env.API}/api/ea-shop/v4`;
-  const data = {};  // pair name -> unwrapped v2 data
+  const V2 = `${env.AMF}/api/amf/v2/ea-shop`, V4 = REF === 'v5' ? `${env.API}/api/v5/ea-shop` : `${env.API}/api/ea-shop/v4`;
+  const data = { v4: {} };  // pair name -> unwrapped v2 data; v4.<pair name> -> unwrapped reference data
   const fill = s => s.replace(/\{([\w.-]+)\}/g, (_, k) => {
     const own = client[k] && client[k] !== 'NULL' ? client[k] : undefined;
     const v = k.includes('.') ? get(data, k) : own ?? (IDS[k] && IDS[k](data));
@@ -213,7 +223,7 @@ async function runClient(client, env) {
   });
   const ok = c => c >= 200 && c < 300;
   const rows = [];
-  for (const p of PAIRS) {
+  for (const p of pairs()) {
     const [m2, p2, b2] = p.v2, [m4, p4, b4] = p.v4 || [];
     const [r2, r4] = await Promise.all([
       call(V2, env, client, m2, fill(p2), b2),
@@ -221,6 +231,7 @@ async function runClient(client, env) {
     ]);
     const d2 = unwrap(r2.json);
     data[p.name] = d2;
+    data.v4[p.name] = unwrap(r4.json);
     let diffs = [], v, why = '';
     if (r2.code === null || r4.code === null) { v = '⏭️'; why = 'no id for this client (add it to clients.json)'; }
     else if (r2.code >= 500 || r4.code >= 500 || r2.code === 'ERR' || r4.code === 'ERR') v = '❌';
@@ -238,6 +249,9 @@ async function runClient(client, env) {
   return rows;
 }
 
+// reference side per REF: v4 as declared; v5 = `v5` if set, else the AMF request, without the v4-only pre/map/note
+const pairs = () => (REF === 'v4' ? PAIRS : PAIRS.map(({ pre, map, note, ...p }) => ({ ...p, v4: p.v5 === undefined ? p.v2 : p.v5 })));
+
 async function main(DATA, ENV) {
   const env = Object.fromEntries(JSON.parse(fs.readFileSync(ENV)).values.map(v => [v.key, v.value]));
   const clients = JSON.parse(fs.readFileSync(DATA));
@@ -248,7 +262,7 @@ async function main(DATA, ENV) {
     console.log(`client ${i} (${client.profileId} ${client.country}): ${rows.map(r => r.v).join(' ')}`);
   }
   const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\..+/, '').replace('T', '-');
-  const out = `report-compare-${stamp}.md`;
+  const out = `report-compare-${REF}-${stamp}.md`;
   fs.writeFileSync(out, render(results, env, stamp));
   console.log(`Report: ${out}`);
 }
@@ -256,8 +270,9 @@ async function main(DATA, ENV) {
 const cell = v => (v === undefined ? '—' : `\`${JSON.stringify(v).replace(/\|/g, '\\|').slice(0, 120)}\``);
 const label = c => [c.case || c.state, c.country].filter(Boolean).join(' · ');
 function render(results, env, stamp) {
-  const md = [`# EA Api Shop — v2 vs v4 data parity — ${stamp}`, ''];
-  md.push(`**v2:** \`${env.AMF}\` · **v4:** \`${env.API}\` · **clients:** ${results.length} (rid/cid = profileId)`, '');
+  const base = REF === 'v5' ? '/api/v5/ea-shop' : '/api/ea-shop/v4';
+  const md = [`# EA Api Shop — AMF v2 (BEES, V5) vs ${REF} data parity — ${stamp}`, ''];
+  md.push(`**v2:** \`${env.AMF}/api/amf/v2/ea-shop\` · **${REF}:** \`${env.API}${base}\` · **clients:** ${results.length} (rid/cid = escort_id)`, '');
   md.push('✅ match · ⚠️ only type (`"0"` vs `0`), format (date/url spelling), order or extra-in-v2 differences · ❌ value/missing differences, 5xx, or only one side 2xx · ⏭️ not testable for this client', '');
 
   md.push('## Clients', '', '| # | Case | Profile | ✅ | ⚠️ | ❌ | ⏭️ |', '|---|---|---|---|---|---|---|');
@@ -266,7 +281,7 @@ function render(results, env, stamp) {
     md.push(`| ${i} | ${label(client)} | ${client.profileId} | ${n('✅')} | ${n('⚠️')} | ${n('❌')} | ${n('⏭️')} |`);
   });
   md.push('', '## Matrix', '', `| Pair | ${results.map(r => r.i).join(' | ')} |`, `|---|${results.map(() => '---').join('|')}|`);
-  PAIRS.forEach((p, k) => md.push(`| ${p.name} | ${results.map(r => r.rows[k].v).join(' | ')} |`));
+  pairs().forEach((p, k) => md.push(`| ${p.name} | ${results.map(r => r.rows[k].v).join(' | ')} |`));
 
   md.push('', '## Details', '');
   results.forEach(({ i, client, rows }) => {
@@ -275,16 +290,16 @@ function render(results, env, stamp) {
       if (v === '✅') return;
       if (v === '⏭️') { md.push(`- ⏭️ **${p.name}** — ${why} (${r2.code ?? '—'}/${r4.code ?? '—'})`); return; }
       md.push('', `#### ${v} ${p.name}`, '', `- v2 \`${p.v2[0]} ${r2.url}\` → **${r2.code}**`,
-        p.v4 ? `- v4 \`${p.v4[0]} ${r4.url}\` → **${r4.code}**` : '- v4 —');
+        p.v4 ? `- ${REF} \`${p.v4[0]} ${r4.url}\` → **${r4.code}**` : `- ${REF} — (route missing)`);
       if (p.note) md.push(`- ${p.note}`);
       md.push('');
-      [['v2', r2], ['v4', r4]].forEach(([side, r]) => {
+      [['v2', r2], [REF, r4]].forEach(([side, r]) => {
         if (typeof r.code === 'number' && r.code < 300) return;
         const { trace, ...body } = isObj(r.json) ? r.json : { body: r.json };  // drop PHP stack traces
         md.push(`${side} body${trace ? ' (stack trace omitted)' : ''}:`, '```json', JSON.stringify(body, null, 2).slice(0, 2000), '```', '');
       });
       if (!diffs.length) return;
-      const table = list => ['| Path | v2 | v4 | Kind |', '|---|---|---|---|', ...list.map(d => `| \`${d.path}\` | ${cell(d.v2)} | ${cell(d.v4)} | ${d.kind} |`)];
+      const table = list => [`| Path | v2 | ${REF} | Kind |`, '|---|---|---|---|', ...list.map(d => `| \`${d.path}\` | ${cell(d.v2)} | ${cell(d.v4)} | ${d.kind} |`)];
       const hard = diffs.filter(d => !soft(d)), easy = diffs.filter(soft);
       if (hard.length) md.push(...table(hard), '');
       if (easy.length) md.push(`<details><summary>${easy.length} type/format/order/extra differences</summary>`, '', ...table(easy), '', '</details>', '');
@@ -296,5 +311,7 @@ function render(results, env, stamp) {
   return md.join('\n') + '\n';
 }
 
-if (process.argv[2] === '--selftest') selftest();
-else main(process.argv[2] || 'clients.json', process.argv[3] || 'env-ea-shop.json');
+const args = process.argv.slice(2).filter(a => !a.startsWith('--ref='));
+if (args[0] === '--selftest') selftest();
+else if (!['v4', 'v5'].includes(REF)) { console.error(`--ref must be v4 or v5, got ${REF}`); process.exit(1); }
+else main(args[0] || 'clients.json', args[1] || 'env-ea-shop.json');

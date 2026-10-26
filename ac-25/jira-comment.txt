@@ -1,0 +1,36 @@
+Run 2 test
+Fix verificati: nessun 500 e nessuno stack trace · POST /payments/:id dà 422 · profilo inesistente dà 404 · PUT /cart senza provincia dà 422 · redeem su gift inesistente dà 404.
+
+Punti da rivedere
+
+GET /gifts è vuoto su v2 e su v5, ma in DB ci sono assegnazioni aperte: 40 profili su 40. Esempi: 43825 (profile_gifts 1332) e 101242 (profile_toolboxes 1965). Non compaiono neanche in /activators, quindi non c'è un id per il redeem.
+
+GET /addons (v2):
+
+su 8 client risponde {"status":"ok"} senza data, mentre v5 restituisce addons: []. Serve data: [];
+
+mancano gli addon 215 e 216, che v5 restituisce.
+
+POST /payment e POST /ext/payment (v2): rispondono 200 ma redirect_url è sempre il failed_url, quindi il pagamento con carta non parte.
+
+GET/DELETE /payments/:id/file/:file_id: 501 su v2 e su v5.
+
+GET /activators (v2): 5,9-6,6s.
+
+Da chiarire
+
+/activators: v2 restituisce il catalogo di 44 toolbox, v5 restituisce [], anche per i profili con toolbox assegnate. Quale dei due è corretto, e dove deve comparire un'assegnazione?
+
+/cart: stessi carrelli e importi, ma alcuni campi differiscono:
+
+v2 restituisce promotion_id/product_id legacy (1955/129), v5 quelli V5 (412/null);
+
+need_geo: v2 true, v5 false (5 client);
+
+product_title: v2 null, v5 "Abbonamento PRO";
+
+nome del bonus: v2 climbback, v5 climbbackMinute.
+
+È voluto che il carrello v2 usi gli id legacy?
+
+Fidelity: lo sconto dei livelli vale 0 su v2 e su v5, il legacy ha 5–25. È un dato V5 da correggere?

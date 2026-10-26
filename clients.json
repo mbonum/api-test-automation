@@ -53,7 +53,7 @@
     "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6ImVhLWF1dGgtMSJ9.eyJqdGkiOiI2YWI2NDNhZDU5YzE0IiwiaWF0IjoxNzkwMzI5NzczLCJuYmYiOjE3OTAzMjk3NzMsImV4cCI6MTgyMTg2NTc3MywiaXNvIjoiU2F0LCAyNS1TZXAtMjAyNyAxMTo0OTozMyBDRVNUIiwiZGF0YSI6eyJsYW5ndWFnZSI6bnVsbH0sInNpZ25hdHVyZSI6ImQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0MjdlIiwicm9sZXMiOnsib3BlcmF0b3JlIjoxOSwib3BlcmF0b3JlVjIiOjE5fX0.WYaezjEwky0agf4Xb1btL72FQlF-QhkODsj8mdBIzBo",
     "cartItemId": "",
     "walletId": "",
-    "giftId": "28",
+    "giftId": "",
     "notes": "suspended, expires 2026-10-14"
   },
   {
