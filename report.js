@@ -10,10 +10,10 @@ const fs = require('fs');
 
 // collection -> [data, env, folder]
 const PRESETS = {
-  'EA Sunrise (hmac).postman_collection.json': ['clients.json', 'env.json', 'V5'],
-  'EA Api Shop (jwt).postman_collection.json': ['clients.json', 'env-ea-shop.json', 'v2'],
+  'main.postman_collection.json': ['clients.json', 'env.json', 'V5'],
+  'main_jwt.postman_collection.json': ['clients.json', 'env-ea-shop.json', 'v2'],
 };
-const [COLLECTION = 'EA Sunrise (hmac).postman_collection.json', ...rest] = process.argv.slice(2);
+const [COLLECTION = 'main.postman_collection.json', ...rest] = process.argv.slice(2);
 const preset = PRESETS[COLLECTION];
 if (!preset && rest.length < 3) {
   console.error(`No preset for "${COLLECTION}". Usage: node report.js <collection> <data.json> <env.json> <folder|"">`);

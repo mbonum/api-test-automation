@@ -1,3 +1,0 @@
-Side effects: the collection's `add to cart`, `payment`, and `ext/payment/ext/purchase` calls return `200`, so they probably wrote real data for escort 102, the same as on earlier runs.
-
-`DELETE gifts/999999999` returns 200 (SUCCESS) for gift ids that do NOT exist. The best practice should be to return 404 when the gift id is not found and 200 when the gift is present and has been actually deleted.
